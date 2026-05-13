@@ -31,4 +31,6 @@ register.addEventListener("submit", (e) => {
   }
 
   notify.classList.add("show");
+  window.location.href = "./contacts.html";
+  setTimeout(() => {}, 1000);
 });
