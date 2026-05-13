@@ -34,3 +34,19 @@ register.addEventListener("submit", (e) => {
   window.location.href = "./contacts.html";
   setTimeout(() => {}, 1000);
 });
+
+//
+
+let count = 0;
+
+const interval = setInterval(() => {
+  count++;
+
+  console.log(count);
+
+  if (count >= 10) {
+    clearInterval(interval);
+  }
+}, 2000);
+
+// clearInterval(interval);
