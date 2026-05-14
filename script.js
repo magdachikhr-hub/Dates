@@ -46,7 +46,7 @@ let count = 0;
 const interval = setInterval(() => {
   count++;
 
-  console.log(count);
+  // console.log(count);
 
   if (count >= 10) {
     clearInterval(interval);
@@ -54,6 +54,8 @@ const interval = setInterval(() => {
 }, 2000);
 
 // clearInterval(interval);
+
+// birthday
 
 function getBirthdayCountdown(month, day) {
   const now = new Date();
@@ -83,3 +85,31 @@ setInterval(() => {
     `${t.days} days ${t.hours} hours ` +
     `${t.minutes} minutes ${t.seconds} seconds`;
 }, 1000);
+
+//newyear
+
+function getNewYear() {
+  const currentYear = new Date().getFullYear();
+
+  const newYear = new Date(currentYear + 1, 0, 1);
+
+  return newYear;
+}
+
+const nextNewYear = getNewYear();
+
+setInterval(() => {
+  const now2 = new Date();
+
+  const difference = nextNewYear - now2;
+
+  const days = Math.floor(difference / 1000 / 60 / 60 / 24);
+  const hours = Math.floor(difference / 1000 / 60 / 60) % 24;
+  const minutes = Math.floor(difference / 1000 / 60) % 60;
+  const seconds = Math.floor(difference / 1000) % 60;
+
+  const timer = document.querySelector(".remaining_time");
+
+  timer.textContent = `${days} days, ${hours} : ${minutes} : ${seconds}  `;
+}, 1000);
+//void function - doesnt return anything
