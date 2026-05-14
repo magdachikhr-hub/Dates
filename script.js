@@ -96,9 +96,8 @@ function getNewYear() {
   return newYear;
 }
 
-const nextNewYear = getNewYear();
-
 setInterval(() => {
+  const nextNewYear = getNewYear();
   const now2 = new Date();
 
   const difference = nextNewYear - now2;
@@ -111,5 +110,9 @@ setInterval(() => {
   const timer = document.querySelector(".remaining_time");
 
   timer.textContent = `${days} days, ${hours} : ${minutes} : ${seconds}  `;
+
+  if (difference <= 0) {
+    timer.textContent = `ayyy new year`;
+  }
 }, 1000);
 //void function - doesnt return anything
